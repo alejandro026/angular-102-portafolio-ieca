@@ -17,13 +17,18 @@
 // * Recuerda que los objetos pueden guardar cualquier tipo de valor en la clave 
 //      + Eso quiere decir que incluso una función puede ser un valor en una clave
 // * Investiga sobre la libreria Math de javascript, te permitirá crear un valor aleatorio 0 o 1
-
+ 
 const juegos = {
     aguila: 0,
     sol: 1,
-    tirarMoneda: undefined
+    tirarMoneda: function(){
+        const aleatorio = Math.floor(Math.random() * 2);
+        console.log(
+            aleatorio === this.aguila ? "Cae águila 🦅" : "Cae sol 🌞"
+        );
+    }
 }
 
 for (let tiros = 0; tiros < 10; tiros++) {
-    // juegos.tirarMoneda()
+    juegos.tirarMoneda()
 }

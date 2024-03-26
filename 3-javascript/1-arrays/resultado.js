@@ -7,9 +7,9 @@
     slice():    Crea una copia superficial de parte de un array en un nuevo array.
     shift():    Elimina y devuelve el primer elemento de un array.
     splice():   Puede eliminar, agregar y reemplazar elementos en posiciones específicas 
-*/
+*/ 
 
-/*
+/* 
     ESCENARIO 1 : VACIANDO EL CARRITO CON TOTAL
     Recorre la lista carrito con un bucle donde cada producto vaya eliminándose del carrito 
     y utiliza la variable `total` para ir contabilizando la cuenta
