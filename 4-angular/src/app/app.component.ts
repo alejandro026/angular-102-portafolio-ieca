@@ -59,6 +59,17 @@ export class AppComponent implements OnInit {
     this.persona.nombre = ''
   }
 
+  eliminarPersona(index:number){
+    this.listaPersonas.slice(index, 1);
+  }
+
+  limpiarFormulario(){
+    this.registroInputs= {
+      email: "",
+      passkey: ""
+    }
+  }
+
   contarOveja() {
     this.contadorOvejas += 1;
   }
