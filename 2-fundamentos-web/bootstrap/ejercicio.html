@@ -1,1 +1,326 @@
 <!-- Aquí incluye el código del ejemplo de Bootstrap -->
+<html lang="en" data-bs-theme="dark"><head><script src="/docs/5.3/assets/js/color-modes.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.122.0">
+    <title>Carousel Template · Bootstrap v5.3</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
+
+    
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <link href="/docs/5.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="/docs/5.3/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="manifest" href="/docs/5.3/assets/img/favicons/manifest.json">
+    <link rel="mask-icon" href="/docs/5.3/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
+    <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon.ico">
+    <meta name="theme-color" content="#712cf9">
+
+
+        <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+            }
+        }
+
+        .b-example-divider {
+            width: 100%;
+            height: 3rem;
+            background-color: rgba(0, 0, 0, .1);
+            border: solid rgba(0, 0, 0, .15);
+            border-width: 1px 0;
+            box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+        }
+
+        .b-example-vr {
+            flex-shrink: 0;
+            width: 1.5rem;
+            height: 100vh;
+        }
+
+        .bi {
+            vertical-align: -.125em;
+            fill: currentColor;
+        }
+
+        .nav-scroller {
+            position: relative;
+            z-index: 2;
+            height: 2.75rem;
+            overflow-y: hidden;
+        }
+
+        .nav-scroller .nav {
+            display: flex;
+            flex-wrap: nowrap;
+            padding-bottom: 1rem;
+            margin-top: -1px;
+            overflow-x: auto;
+            text-align: center;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .btn-bd-primary {
+            --bd-violet-bg: #712cf9;
+            --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+            --bs-btn-font-weight: 600;
+            --bs-btn-color: var(--bs-white);
+            --bs-btn-bg: var(--bd-violet-bg);
+            --bs-btn-border-color: var(--bd-violet-bg);
+            --bs-btn-hover-color: var(--bs-white);
+            --bs-btn-hover-bg: #6528e0;
+            --bs-btn-hover-border-color: #6528e0;
+            --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+            --bs-btn-active-color: var(--bs-btn-hover-color);
+            --bs-btn-active-bg: #5a23c8;
+            --bs-btn-active-border-color: #5a23c8;
+        }
+
+        .bd-mode-toggle {
+            z-index: 1500;
+        }
+
+        .bd-mode-toggle .dropdown-menu .active .bi {
+            display: block !important;
+        }
+        </style>
+
+        
+        <!-- Custom styles for this template -->
+        <link href="carousel.css" rel="stylesheet">
+    <style id="custom-cursor" type="text/css">body button, body [type='button'], body input[type='reset'], body input[type='submit'], body [role="button"], ::-webkit-search-cancel-button, ::-webkit-search-decoration, ::-webkit-scrollbar-button, ::-webkit-file-upload-button, [role^=button], .cc_pointer, [type="search"]::-webkit-search-cancel-button, a, select, [type="search"]::-webkit-search-decoration, .paper-button, .ytp-progress-bar-container, input[type=submit], :link, :visited, a > *, img,  ::-webkit-scrollbar-button, .ogdlpmhglpejoiomcodnpjnfgcpmgale_pointer, ::-webkit-file-upload-button, .ytp-volume-panel, #myogdlpmhglpejoiomcodnpjnfgcpmgale .icon, body .custom-cursor-on-hover {cursor: url("data:image/png;base64,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") 8 0, pointer !important;} html,body,body select,body .custom-cursor-default-hover {cursor: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAABW1JREFUWEe9lluME1Ucxr9zpu1M271f0QCuJm47k3gh4B0hhGgiaCIoCYGIMT5ofDExPgiJiQ8YRAgYEFDEJxMSiEICiiZqIgIqXjBRYWa7wHYXFqzudkvbmem0M+dvTlvUKCbrsuxJJn2Zzvmd7/v+3wzTdX0vGFsIoidM0zyEKV6sV9f9+3xfORoOeyGipVMNwXoNo/JusRj6KhTCLk2TEI+ZpvnRVAkhAcrv2HZ4ju/jTVWdcggJ4O207cicIAAjmnIICVB627bVCABOhFuDANtUFe9MkR0yhKW3HEc9EgpBXgeKRRAwZRASwN3hOFqcCKtjMRwqFBAwVrXjshKKEI9blvXhtQimBHC2O0707iCAQgRfbg6gBCBWz4S041pBVAG2OU70Ht+vHZCxahZWNDRgWbmMR8vla6oESxqGvcW2Yx6Ac4qCVZ5XVeD5WAwcwCbX/csOVfUUokm1gyUMo7jFtuP9ioK3VRXH83kIxjAGIK0omBUENWGIsF1VsbNmxzLLsg5ORiYkQGGLbTfI8VsXjeI1x6kC/HN9oyiY7QfYpUYmFUJaUNhs2w3314uIGEOKcwxyjgcqlT8zsayhAXf5Pl4olbBjEpVgCV3Pb3bdxnmXQwhgdziMrZqGY/k8eF0NWdNpzrGxnom6HeX6dEzYDglwaZPrNs2vVKrhkwqMAngqHsf+og2l7obMgMMYojIP9daUPbFT08q81hMTgmBJXc9tdN1mOfdS9mc8rwohO6FaSPUNy0QoSAgCyj5BTo2nEj5o1PAxxcrAxCCqABtct/kc59WUf1ufAhlCnwgjRMhXCCNxwuleH+dmCpyfLjDaLlAOE0gBnK+bkDvWXCb2/yGYbhhj6x2n5V7fxxuahjWuCxfABSEwxggnZvv4cZaP4ekBQgFDKAooEYZQrPYr16V0gMKJJmS/lBDBsr6+vgPjHVE5Bdn1jtO6sB7CYSGQIYEj8ys4OrcCwQGtBfBygNbOEOtisC8ShE9onCGrCihlCZEWwujhRpzf21wOhD83lUp9Nx4IqUB2neO03l+pYMAX+KXXx/4lHjyt9ncioN3gyPULhGMcTn8cpRGgnGMIqwqCEkdgc/hFjsDlqOQUENHD4/2qkgCjL9t2W0/Jw8FHyvh+TgXxFoZoJ8eYJaoArQkOJ0NQmwhnt3fBHYoUiOgwY+wSEckrB2CUMZYnotOWZX0xntNXG1Y3jJFnnUL7TysKuNAjqrKG1Fr082eAiifQfBMHCYKiMjgDEfRv6PAD+LekUilrvBv9131M1/Xfr3sw2xG7zUXjTA43S4h3MWQ+j2N4XxNueG4YjTMYwg21wLEQoe/1DthnIntM01w+KQAdi7Id0xaUwDhw6Swh+2kbilbMBofXOi/XNu1BG1obg5cjqM0M9mAYfes6Bbi43bKsn68GQirwW+dD2c7uBR5EiSO1sR1+PjQQBMGSUCi0mGvBq71rLkJr4xhLiWoewAin1rbDG1b3m6a59KoAjKSR6Vg02tV4IyG9sx1BhT5xHGfF0NDQWE9PT0tUiw7OWJlrar3TrQHczMHDQOaogou7u4mYuMOyrB8mCsF03fhVm17qdgc1YgqtNU3zFQDi8gOTyeQGrUu82PtSBvkBQqybVftgrD9AZl8n3EH1kGmaiycMkEwmVzPGVhLR6iu9UBKJxPUcysD0VSMRpbWESBPQcD1H8YKAnQ7hwnvTEJCvT3Qi/v3lcYWj6Lq+S+2uPD1teQbhGIMaCyPzWRyjR+Ly9TnEGJt18uTJ7ERUGBdAIpFIMCin2ubnuDsQhZtWZQ6OCyF2lEqlPel0Wr5MJ7TGBSCfbBjGViJ6kjH2vhBi29UE7++kfwBm1fk/5nfGpAAAAABJRU5ErkJggg==") 0 0, auto !important;}</style></head>
+    <body>
+        <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+        <symbol id="check2" viewBox="0 0 16 16">
+            <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"></path>
+        </symbol>
+        <symbol id="circle-half" viewBox="0 0 16 16">
+            <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"></path>
+        </symbol>
+        <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+            <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"></path>
+            <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"></path>
+        </symbol>
+        <symbol id="sun-fill" viewBox="0 0 16 16">
+            <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path>
+        </symbol>
+        </svg>
+
+        <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+        <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (dark)">
+            <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
+            <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+            <li>
+            <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+                <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#sun-fill"></use></svg>
+                Light
+                <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+            </button>
+            </li>
+            <li>
+            <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="dark" aria-pressed="true">
+                <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
+                Dark
+                <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+            </button>
+            </li>
+            <li>
+            <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="auto" aria-pressed="false">
+                <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#circle-half"></use></svg>
+                Auto
+                <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+            </button>
+            </li>
+        </ul>
+        </div>
+
+        
+    <header data-bs-theme="dark">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <div class="container-fluid">
+        <a class="navbar-brand" href="#">Carousel</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+            </li>
+            </ul>
+            <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+        </div>
+    </nav>
+    </header>
+
+    <main>
+
+    <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-label="Slide 1" aria-current="true"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class=""></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" class=""></button>
+        </div>
+        <div class="carousel-inner">
+        <div class="carousel-item active">
+            <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+            <div class="container">
+            <div class="carousel-caption text-start">
+                <h1>Example headline.</h1>
+                <p class="opacity-75">Some representative placeholder content for the first slide of the carousel.</p>
+                <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
+            </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+            <div class="container">
+            <div class="carousel-caption">
+                <h1>Another example headline.</h1>
+                <p>Some representative placeholder content for the second slide of the carousel.</p>
+                <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
+            </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+            <div class="container">
+            <div class="carousel-caption text-end">
+                <h1>One more for good measure.</h1>
+                <p>Some representative placeholder content for the third slide of this carousel.</p>
+                <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
+            </div>
+            </div>
+        </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+
+    <div class="container marketing">
+
+        <!-- Three columns of text below the carousel -->
+        <div class="row">
+        <div class="col-lg-4">
+            <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+            <h2 class="fw-normal">Heading</h2>
+            <p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
+            <p><a class="btn btn-secondary" href="#">View details »</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+            <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+            <h2 class="fw-normal">Heading</h2>
+            <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second column.</p>
+            <p><a class="btn btn-secondary" href="#">View details »</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+            <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+            <h2 class="fw-normal">Heading</h2>
+            <p>And lastly this, the third column of representative placeholder content.</p>
+            <p><a class="btn btn-secondary" href="#">View details »</a></p>
+        </div><!-- /.col-lg-4 -->
+        </div><!-- /.row -->
+
+
+        <!-- START THE FEATURETTES -->
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+        <div class="col-md-7">
+            <h2 class="featurette-heading fw-normal lh-1">First featurette heading. <span class="text-body-secondary">It’ll blow your mind.</span></h2>
+            <p class="lead">Some great placeholder content for the first featurette here. Imagine some exciting prose here.</p>
+        </div>
+        <div class="col-md-5">
+            <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"></rect><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text></svg>
+        </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+        <div class="col-md-7 order-md-2">
+            <h2 class="featurette-heading fw-normal lh-1">Oh yeah, it’s that good. <span class="text-body-secondary">See for yourself.</span></h2>
+            <p class="lead">Another featurette? Of course. More placeholder content here to give you an idea of how this layout would work with some actual real-world content in place.</p>
+        </div>
+        <div class="col-md-5 order-md-1">
+            <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"></rect><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text></svg>
+        </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+        <div class="col-md-7">
+            <h2 class="featurette-heading fw-normal lh-1">And lastly, this one. <span class="text-body-secondary">Checkmate.</span></h2>
+            <p class="lead">And yes, this is the last block of representative placeholder content. Again, not really intended to be actually read, simply here to give you a better view of what this would look like with some actual content. Your content.</p>
+        </div>
+        <div class="col-md-5">
+            <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"></rect><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text></svg>
+        </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <!-- /END THE FEATURETTES -->
+
+    </div><!-- /.container -->
+
+
+    <!-- FOOTER -->
+    <footer class="container">
+        <p class="float-end"><a href="#">Back to top</a></p>
+        <p>© 2017–2024 Company, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+    </footer>
+    </main>
+    <script src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+        
+    </body>
+</html>
